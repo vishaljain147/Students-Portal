@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Library Details</h1>
+        <form action="/add_library" method="POST">
+            <label for="id">Student ID:</label>
+            <input type="number" id="id" name="id" required>
+        
+            <label for="registerno">Registerno :</label>
+            <input type="number" id="registerno" name="registerno" required>
+        
+            <label for="borrowedb">Borrowed books:</label>
+            <input type="number" id="borrowedb" name="borrowedb" required>
+
+            <label for="returnedb">Returned Books:</label>
+            <input type="number" id="returnedb" name="returnedb" required>
+
+	    <label for="reservedb">Pending Books:</label>
+            <input type="number" id="reservedb" name="reservedb" required>
+	
+	    <label for="totalf">Total fine:</label>
+            <input type="number" id="totalf" name="totalf" required>
+
+	    <label for="paid">Paid Amount:</label>
+            <input type="number" id="paid" name="paid" required>
+        
+            <label for="npaid">Pending Amount:</label>
+            <input type="number" id="npaid" name="npaid" required>
+
+	    <label for="duedate">Due Date and Time(hh:mm:ss):</label>
+            <input type="date" id="duedate_date" name="duedate_date" required>
+	    <input type="time-local" id="duedate_time" name="duedate_time" required><br>
+
+            <button type="submit">SAVE</button>
+        </form>
+    </div>
+</body>
+</html>

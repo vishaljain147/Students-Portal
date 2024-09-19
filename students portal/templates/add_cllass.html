@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cllass</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Cllass Details</h1>
+        <form action="/add_cllass" method="POST">
+
+            <label for="cno">Class no:</label>
+            <input type="text" id="cno" name="cno" required>
+        
+	    <label for="course">Course:</label>
+            <select id="course" name="course" required>
+                <option value="">Select a course</option>
+                <option value="Mathematics">Mathematics (Math)</option>
+                <option value="Physics">Physics (Phy)</option>
+                <option value="Chemistry">Chemistry (Chem)</option>
+                <option value="Biology">Biology (Bio)</option>
+                <option value="BCA">BCA</option>
+                <option value="MCA">MCA</option>
+                <option value="Computer Science">Computer Science (CS)</option>
+                <option value="Economics">Economics (Eco)</option>
+                <option value="English Literature">English Literature (Eng Lit)</option>
+                <option value="Psychology">Psychology (Psy)</option>
+            </select><br>    
+        
+            <label for="sec">Section:</label>
+            <select id="section" name="section" required>
+                <option value="">Select Section</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+            </select>
+
+            <label for="labno1">Lab1 no.:</label>
+            <input type="text" id="labno1" name="labno1" required>
+
+	    <label for="labname1">Lab1 name:</label>
+            <input type="text" id="labname1" name="labname1" required>
+
+	    <label for="labno2">Lab2 no.:</label>
+            <input type="text" id="labno2" name="labno2" required>
+
+	    <label for="labname2">Lab2 name:</label>
+            <input type="text" id="labname2" name="labname2" required>
+
+	    <label for="labno3">Lab3 no.:</label>
+            <input type="text" id="labno3" name="labno3" required>
+
+	    <label for="labname3">Lab3 name:</label>
+            <input type="text" id="labname3" name="labname3" required>
+	
+
+            <button type="submit">Add Tutor</button>
+        </form>
+    </div>
+</body>
+</html>

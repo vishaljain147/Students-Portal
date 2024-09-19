@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<head>
+<title>students portal</title>
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+    }
+    body {
+        background-image: url("/static/white1.jpg");
+        background-size: cover;
+        background-position: center top; 
+        background-repeat: no-repeat;
+    } 
+    .view{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width : 35vw;
+        height : 50vh;
+        position : absolute;
+        left : 40vw;
+        top:25vh;
+
+        
+    }
+    .view table th{
+        padding : 15px;
+        background-color : pink;
+        width:max-content;
+        height : max-content;
+        font-size:1.25rem;
+    }
+    .view table .header
+    {
+        background-color: blue;
+    }
+    .nav-list{
+        width: 15vw;
+        height: 800px;
+        background-color:rgb(18, 18, 57);
+        text-decoration: none;
+        position:fixed;
+        top:10.4vh;
+        
+    }
+    .nav-list a{
+        color: white;
+        display: block;
+        height: 5vh;
+        line-height: 200%;
+        text-decoration: none;
+        padding-left: 40px;
+        border-top: 1px solid rgb(255,255,255,.1);
+        border-bottom: 1px solid black;
+        transition: 1.4s;
+    }
+    .title{
+        width : 100vw;
+        height : 15vh;
+    }
+    .nav-list a :hover{
+        padding-left: 50px;
+    }
+    .nav-list a.active{
+        background-color: gray;
+    }
+    .nav-list a:hover:not(.active){
+        background-color: grey;
+    }
+</style>
+</head>
+<body style="background-color: white;">
+    <div class="title" style="position:fixed;">
+        <p style="background-color: rgb(18, 18, 57);"><img src="/static/logo2.png" style="width: 33%; height: 100%;"></p>
+    </div>
+<div id="main">
+</div>
+<ul class="nav-list">
+    <li><a href="{{url_for('detail')}}"><b>Details</b> </a></li>
+    <li><a class= active href="{{url_for('tutorr')}}"><b>Tutor</b></a></li>
+    <li><a href="{{url_for('cllasss')}}"><b>Class</b></a></li>
+    <li><a href="{{url_for('attendancee')}}"><b>Attendance</b></a></li>
+    <li><a href="{{url_for('academicss')}}"><b>Academic</b></a></li>
+    <li><a href="{{url_for('feess')}}"><b>Fees</b></a></li>
+    <li><a href="{{url_for('libraryy')}}"><b>Library</b></a></li>
+    <li><a href="{{url_for('hostell')}}"><b>Hostel</b></a></li>
+    <li><a href="{{url_for('practice')}}"><b>Logout</b></a></li>
+</ul>
+</div>
+<div class="view">
+    <table>
+        {% for a,b in ptr%}
+            {% if b.registerno == k%}
+            <tbody>
+                <tr>
+                    <th>RegisterNumber</th>
+                    <th>{{b.registerno}}</th>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Tutor Name</th>
+                    <th>{{a.tname}}</th>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Mail-id</th>
+                    <th>{{a.tmid}}</th>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Mobile Number</th>
+                    <th>{{a.mobileno}}</th>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <th>Room Number</th>
+                    <th>{{a.roomno}}</th>
+                </tr>
+            </tbody>
+            {% endif %}
+        {% endfor %}  
+        </table>
+</div>
+</body>
